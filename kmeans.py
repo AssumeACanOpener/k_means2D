@@ -2,32 +2,24 @@
 
 import random
 import math
+import matplotlib
+import matplotlib.pyplot as plt
+
+matplotlib.style.use('ggplot')
 
 x_bound = 10
 y_bound = 10
 num_points = 20
 num_clusters = 4
 
-class Point:
-    def __init__(self, x=random.uniform(-x_bound, x_bound),
-                       y=random.uniform(-y_bound, y_bound)):
-        self.x = x
-        self.y = y
-
-    def __str__(self):
-        return '(' + str(self.x) + ',' + str(self.y) + ')'
-
-    def distance_to(self, p):
-        return math.sqrt((self.x - p.x)**2 + (self.y - p.y)**2)
-
 # initalize data points and cluster centroids at random
-points = []
-clusters= []
 
-for i in range(num_points):
-    points.append(Point())
+#fig = plt.figure()
+#ax = fig.add_subplot(111)
+#ax.set_xlabel('X')
+#ax.set_ylabel('Y')
+#ax.set_title('K-means clustering')
+plt.axis([-10, 10, -10, 10])
+#plt.plot([p.x], [p.y], 'ro')
 
-for i in range(num_clusters):
-    clusters.append(Point())
-
-
+plt.show()
